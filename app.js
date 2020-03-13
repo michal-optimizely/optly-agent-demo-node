@@ -7,7 +7,7 @@ const axios = require('axios');
 const sdkKeyHeaderObj = { 'x-optimizely-sdk-key': 'WhAG6H19i3ttXTRhjEBgb8' };
 const dataObj = { 'userId': 'test-user' }
 
-// GET health
+// GET health (admin)
 const getHealth = () => { 
   axios.get('http://localhost:8088/health').then((response) => {
     console.log(`response code: ${response.status}`);
@@ -15,18 +15,22 @@ const getHealth = () => {
   });
 };
 
-// GET info
+// GET info (admin)
 const getInfo = () => { 
+  console.log('### Logging Agent info ###');
   axios.get('http://localhost:8088/info').then((response) => {
     console.log(`response code: ${response.status}`);
     console.log(response.data);
+    console.log('######');
   }).catch((error) => {
     console.log(error);
+    console.log('######');
   });;
 };
 
-// GET config
+// GET config (client)
 const getConfig = () => { 
+  console.log('### Logging config info ###');
   axios({
     method: 'get',
     url: 'http://localhost:8080/v1/config',
@@ -34,13 +38,16 @@ const getConfig = () => {
   }).then((response) => {
     console.log(`response code: ${response.status}`);
     console.log(response.data);
+    console.log('######');
   }).catch((error) => {
     console.log(error);
+    console.log('######');
   });
 };
 
-// POST activate
+// POST activate (client)
 const activate = (featureKey) => { 
+  console.log('### Calling activate ###');
   axios({
     method: 'post',
     url: 'http://localhost:8080/v1/activate',
@@ -52,13 +59,16 @@ const activate = (featureKey) => {
   }).then((response) => {
     console.log(`response code: ${response.status}`);
     console.log(response.data);
+    console.log('######');
   }).catch((error) => {
     console.log(error);
+    console.log('######');
   });;
 };
 
-// POST track
-const track = (eventKey) => { 
+// POST track (client)
+const track = (eventKey) => {
+  console.log('### Calling track ###'); 
   axios({
     method: 'post',
     url: 'http://localhost:8080/v1/track',
@@ -69,13 +79,15 @@ const track = (eventKey) => {
     }
   }).then((response) => {
     console.log(`response code: ${response.status}`);
+    console.log('######');
   }).catch((error) => {
     console.log(error);
+    console.log('######');
   });;
 };
 
-// getHealth();
-// getInfo();
+getHealth();
+getInfo();
 // getConfig();
-activate('<feature key>');
+// activate('<feature key>');
 // track('<event key>');
