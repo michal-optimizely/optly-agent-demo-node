@@ -3,7 +3,7 @@
 App that can be used to talk to an instance of Optimizely agent running locally. If you have Docker installed, getting the Agent instance up and running is as simple as:
 1. Pull the Docker image:
 `docker pull optimizely/agent`
-2. Run the docker container from an image([Official docs](https://github.com/optimizely/agent#running-via-docker) for reference):
+2. Run the docker container from an image ([official docs](https://github.com/optimizely/agent#running-via-docker) for reference):
 ```bash
 docker run -d --name optimizely-agent \
          -p 8080:8080 \
