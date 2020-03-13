@@ -13,6 +13,7 @@ docker run -d --name optimizely-agent \
          optimizely/agent:latest
 ```
 3. If so inclined, the container can be configured with [a number of options](https://github.com/optimizely/agent#configuration-options).
+4. Once you have created the container with the above command once, you can use `docker start <container name>` & `docker stop <container name>` to start/stop it.
 
 ### How to use the app
 1. Verify that an instance of Optimizely agent is running: `curl localhost:8088/health`.
