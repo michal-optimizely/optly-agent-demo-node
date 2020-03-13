@@ -10,4 +10,6 @@ App that can be used to talk to an instance of Optimizely agent running locally.
 1. Verify that an instance of Optimizely agent is running: `curl localhost:8088/health`.
 2. Clone the repo and enter the app folder.
 3. Instal dependencies: `npm install`.
-4. Run the `app.js` in the Terminal: `node app.js`.
+4. Provide valid SDK key (line 7).
+5. Run the `app.js` in the Terminal: `node app.js`.
+6. Try calling activate/track with a valid feature-/eventKey.
